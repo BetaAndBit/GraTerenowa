@@ -12,4 +12,6 @@ Poniższy wykres przedstawia ile kred zużyły różne osoby.
 
 Zadanie: Znajdź miesiąc, w którym najwięcej kredy zużyła trójka: Hugon S., Stanisław U. i Wacław S.
 
+http://betabit.wiki/app/mini/mini6717.html
+
 
