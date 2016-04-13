@@ -7,7 +7,7 @@ opts_chunk$set(comment = NA, results = "asis", comment = NA, tidy = F)
 
 Za dwa tygodnie konkurs programistyczny. Bit ma 14 dni na przeczytanie 500 stron podręcznika nowego języka programowania `Q+`. 
 
-Poniższy wykres przedstawia ile stron planował przeczytać do określonego dnia (szara linia) oraz ile stron faktycznie przeczytał do tego dnia (czerwona linia).
+Poniższy wykres przedstawia ile stron planował przeczytać do określonego dnia oraz ile stron faktycznie przeczytał do tego dnia.
 
 Zadanie: Znajdź dzień, w którym Bit przeczytał najwięcej stron podręcznika do `Q+`.
 
