@@ -17,6 +17,7 @@ Zadanie: Znajdź dzień, w którym Bit przeczytał najwięcej stron podręcznika
 
 ```{r, echo=FALSE, warning=FALSE, fig.width=5.5, fig.height=6}
 library(ggplot2)
+library(BetaBitTools)
 x <- -13:0
 y <- seq(0, 500, length.out = 14)
 y2 <- c(0, 10, 15, 20, 30, 35, 40, 30, 50, 60, 150, 30, 20, 10)
@@ -27,9 +28,9 @@ colnames(ndf) <- c("Dzien", "Plan", "Wykonanie")
 library(tidyr)
 ndf %>% gather(str, val, -Dzien) -> ndf2
 
-ggplot(ndf2, aes(Dzien, val, group=str, color=str)) + theme_bw() + 
+ggplot(ndf2, aes(Dzien, val, group=str, color=str)) + theme_BB() + 
   geom_line() + geom_point()+
-  xlab("Dzień do konkursu") + ylab("Strony przeczytane do danego dnia") +
+  xlab("Dzien do konkursu") + ylab("Strony przeczytane do danego dnia") +
   theme(legend.position="top") + scale_color_manual(name="", values=c("black", "grey"))
  
 ```
