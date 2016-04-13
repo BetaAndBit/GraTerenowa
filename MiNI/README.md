@@ -22,3 +22,10 @@ Odczytaj z wykresu kiedy Bit przeczytał najwięcej podręcznika
 
 http://betabit.wiki/app/pl/locations/1/tasks/5353/
 
+
+## Zadanie 3:
+
+Odczytaj z wykresu dane zakodowane przez ISOTYPE
+
+http://betabit.wiki/app/pl/locations/1/tasks/1313/
+
