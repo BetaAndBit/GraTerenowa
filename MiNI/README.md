@@ -14,6 +14,11 @@ Poniższy wykres przedstawia ile kred zużyli różni znani matematycy w różny
 
 Zadanie: Znajdź miesiąc, w którym najwięcej kredy zużyła trójka: Hugon S., Stanisław U. i Wacław S.
 
-http://betabit.wiki/app/pl/locations/1/tasks/1/
+http://betabit.wiki/app/pl/locations/1/tasks/6717/
 
+## Zadanie 2:
+
+Odczytaj z wykresu kiedy Bit przeczytał najwięcej podręcznika
+
+http://betabit.wiki/app/pl/locations/1/tasks/5353/
 
