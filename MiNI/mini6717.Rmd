@@ -30,7 +30,7 @@ ndf <- as.data.frame(as.table(mat))
 colnames(ndf) <- c("Matematyk", "Miesiac", "Kreda")
 
 p1 <- nPlot(Kreda ~ Miesiac, group = 'Matematyk', data = ndf, type = 'multiBarChart')
-p1$set(width = 600)
+p1$set(width = 400, height = 650)
 p1$show('inline', include_assets = TRUE, cdn = TRUE)
 ```
 
