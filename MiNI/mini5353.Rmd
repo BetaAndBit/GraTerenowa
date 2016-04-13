@@ -20,7 +20,7 @@ library(ggplot2)
 library(BetaBitTools)
 x <- -13:0
 y <- seq(0, 500, length.out = 14)
-y2 <- c(0, 10, 15, 20, 30, 35, 40, 30, 50, 60, 150, 30, 20, 10)
+y2 <- c(0, 10, 15, 20, 10, 35, 20, 30, 50, 20, 150, 70, 50, 20)
 
 ndf <- data.frame(factor(x), y, cumsum(y2))
 colnames(ndf) <- c("Dzien", "Plan", "Wykonanie")
