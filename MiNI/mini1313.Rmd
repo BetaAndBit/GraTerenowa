@@ -1,0 +1,15 @@
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(comment = NA, results = "asis", comment = NA, tidy = F)
+```
+
+## Pokój 222
+
+Poniższy wykres wykorzystuje technikę ISOTYPE by pokazać jaka część osób w danym wieku ma właściwą masę ciałą / niedowagę / nadwagę.
+
+Odczytaj z niego jaki procent mężczyzn w wieku 25-24 lata ma nadwagę, następnie jaki procent kobiet w tym wieku ma nadwagę a w wyniku podaj różnicę tych dwóch liczb. Czyli o ile punktów procentowych nadwaga jest częstsza w grupie mężczyzn 25-34 niż w grupie kobiet. 
+
+.
+
+![](isotype.png)
+
