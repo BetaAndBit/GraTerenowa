@@ -5,17 +5,17 @@ opts_chunk$set(comment = NA, results = "asis", comment = NA, tidy = F)
 
 ## Pokój 107
 
-Za dwa tygodnie konkurs programistyczny. Bit ma dwa tygodnie na przeczytanie 500 stron podręcznika nowego języka programowania `Q+`. 
+Za dwa tygodnie konkurs programistyczny. Bit ma 14 dni na przeczytanie 500 stron podręcznika nowego języka programowania `Q+`. 
 
 Poniższy wykres przedstawia ile stron planował przeczytać do określonego dnia (szara linia) oraz ile stron faktycznie przeczytał do tego dnia (czerwona linia).
 
-Zadanie: Znajdź dzień, w którym Bit przeczytał najwięcej stron tego podręcznika.
+Zadanie: Znajdź dzień, w którym Bit przeczytał najwięcej stron podręcznika do `Q+`.
 
 .
 
 .
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, warning=FALSE, fig.width=5.5, fig.height=6}
 library(ggplot2)
 x <- -13:0
 y <- seq(0, 500, length.out = 14)
@@ -24,10 +24,11 @@ y2 <- c(0, 10, 15, 20, 30, 35, 40, 30, 50, 60, 150, 30, 20, 10)
 ndf <- data.frame(factor(x), y, cumsum(y2))
 colnames(ndf) <- c("Dzien", "Strony", "Strony2")
 
+
 ggplot(ndf, aes(Dzien, Strony, group=1)) + theme_bw() + 
   geom_line(color="grey") + geom_point(color="grey") +
   geom_line(aes(y=Strony2), color="black") + geom_point(aes(y=Strony2), color="black") +
-  xlab("Dzień do konkursu") + ylab("Strony przeczytane do tego dnia")
+  xlab("Dzień do konkursu") + ylab("Strony przeczytane do danego dnia")
  
 ```
 
