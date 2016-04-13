@@ -22,13 +22,15 @@ y <- seq(0, 500, length.out = 14)
 y2 <- c(0, 10, 15, 20, 30, 35, 40, 30, 50, 60, 150, 30, 20, 10)
 
 ndf <- data.frame(factor(x), y, cumsum(y2))
-colnames(ndf) <- c("Dzien", "Strony", "Strony2")
+colnames(ndf) <- c("Dzien", "Plan", "Wykonanie")
 
+library(tidyr)
+ndf %>% gather(str, val, -Dzien) -> ndf2
 
-ggplot(ndf, aes(Dzien, Strony, group=1)) + theme_bw() + 
-  geom_line(color="grey") + geom_point(color="grey") +
-  geom_line(aes(y=Strony2), color="black") + geom_point(aes(y=Strony2), color="black") +
-  xlab("Dzień do konkursu") + ylab("Strony przeczytane do danego dnia")
+ggplot(ndf2, aes(Dzien, val, group=str, color=str)) + theme_bw() + 
+  geom_line() + geom_point()+
+  xlab("Dzień do konkursu") + ylab("Strony przeczytane do danego dnia") +
+  theme(legend.position="top") + scale_color_manual(name="", values=c("black", "grey"))
  
 ```
 
