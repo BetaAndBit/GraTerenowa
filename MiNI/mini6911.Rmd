@@ -10,11 +10,9 @@ Czas się odprężyć.
 Bit ma w planie maraton filmowy. Wybierze jeden serial i będzie oglądał cały pierwszy sezon. Ale który serial wybrać?
 
 Wybierz serial, którego oceny w pierwszym sezonie rosną najszybciej.
-.
 
-.
 
-```{r, echo=FALSE, fig.width=8, fig.height=9}
+```{r, echo=FALSE, fig.width=7, fig.height=8, warning=FALSE, message=FALSE}
 library(PogromcyDanych)
 library(dplyr)
 library(ggplot2)
