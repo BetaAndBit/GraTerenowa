@@ -7,7 +7,9 @@ opts_chunk$set(comment = NA, results = "asis", comment = NA, tidy = F)
 
 Czas się odprężyć. 
 
-Bit ma w planie maraton filmowy. Wybierze jeden serial i będzie oglądał cały pierwszy sezon. Ale który serial wybrać?
+Bit ma w planie maraton filmowy. Wybierze jeden serial i będzie oglądał cały pierwszy sezon przez całą noc. Ale który serial wybrać?
+
+Bit pobrał z serwisu IMDB dane o ocenach wszystkich odcinków z wszystkich interesujących go seriali. Dane te przedstawia poniższy wykres.
 
 Wybierz serial, którego oceny w pierwszym sezonie rosną najszybciej.
 
