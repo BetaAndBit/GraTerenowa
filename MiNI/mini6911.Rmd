@@ -1,0 +1,44 @@
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(comment = NA, results = "asis", comment = NA, tidy = F)
+```
+
+## Dziekanat
+
+Czas się odprężyć. 
+
+Bit ma w planie maraton filmowy. Wybierze jeden serial i będzie oglądał cały pierwszy sezon. Ale który serial wybrać?
+
+Wybierz serial, którego oceny w pierwszym sezonie rosną najszybciej.
+.
+
+.
+
+```{r, echo=FALSE, fig.width=8, fig.height=9}
+library(PogromcyDanych)
+library(dplyr)
+library(ggplot2)
+
+seriale <- c("Game of Thrones", "Lost", "True Detective", "Breaking Bad",
+  "Doctor Who", "Sherlock", "How I Met Your Mother", "Friends",
+  "House M.D.", "The Big Bang Theory", "House of Cards")
+
+s1 <- serialeIMDB %>% 
+  filter(sezon==1) %>%
+  filter(serial %in% seriale)
+s1$odcinek <- as.numeric(as.character(s1$odcinek))
+
+tmp <- s1 %>% group_by(serial) %>%
+  summarise(suma = sum(glosow)) %>%
+  arrange(-suma) %>%
+  as.data.frame() %>%
+  head(30)
+
+ggplot(s1, aes(odcinek, ocena, color=serial, shape=serial)) +
+  geom_point(size=2) + geom_smooth(se=F, method="lm") +
+  scale_shape_manual(name="Nazwa serialu", values=LETTERS) + scale_color_discrete(name="Nazwa serialu")+
+  xlim(0,25) + theme_classic() + ylab("Ocena odcinka") +
+  xlab("Numer odcinka, sezon 1")
+
+```
+
