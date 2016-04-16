@@ -29,3 +29,10 @@ Odczytaj z wykresu dane zakodowane przez ISOTYPE
 
 http://betabit.wiki/app/pl/locations/1/tasks/1313/
 
+
+## Zadanie 4:
+
+Pomóż Bitowi wybrać serial na maraton filmowy
+
+http://betabit.wiki/app/pl/locations/1/tasks/6911/
+
