@@ -13,7 +13,7 @@ Co wybrać? Metro jest szybkie, ale co jeżeli trzeba będzie długo czekać na 
 
 Bit szybko wygrzebał z Internetu szacunki czasów przejazdów tymi trzema środkami transportu. Są one przedstawione na poniższym wykresie za pomocą dystrybuanty oraz histogramu.
 
-Patrząc na czasy przemieszczania się różnymi środkami transportu, jako wynik napisz po przecinkach procent szansy, że zdążą dotrzeć do wieży Eiffela w 27 minut jadąc metrem, biegnąc i jadąc rowerem (nie trzeba pisać znaku `%`, przykładowy format: `50,50,50`).
+Patrząc na czasy przemieszczania się różnymi środkami transportu, jako wynik napisz po przecinkach procent szansy, że zdążą dotrzeć do wieży Eiffela w 27 minut jadąc rowerem, biegnąc i jadąc metrem (nie trzeba pisać znaku `%`, przykładowy format: `50,50,50`).
 
 
 ```{r, echo=FALSE, fig.width=6, fig.height=6, dev='svg', warning=FALSE, message=FALSE}
