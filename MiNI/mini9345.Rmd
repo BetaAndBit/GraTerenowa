@@ -38,19 +38,19 @@ attach(wielkiWyscig)
 
 
 par(mfrow=c(3,1), mar=c(2,5,0,1))
-hist((rower/60), col="grey", 19:35, xlim=c(19,35), border="white", las=1,xlab="",ylab="rower", yaxt="n", ylim=c(0,6), main="", xaxt="n")
+hist((rower/60), col="grey", 19:35, xlim=c(19,35), border="white", las=1,xlab="",ylab="rower", yaxt="n", ylim=c(0,6), main="", xaxt="n", cex.lab=2)
 abline(h=1:5, col="white", lwd=3)
 abline(v=19:35, col="white", lwd=3)
 axis(1,19:35, col="white", col.ticks="black")
 abline(v=26, lty=3)
 
-hist((bieg/60), col="grey", 19:35, xlim=c(19,35), border="white", las=1,xlab="",ylab="bieg", yaxt="n", ylim=c(0,6), main="", xaxt="n")
+hist((bieg/60), col="grey", 19:35, xlim=c(19,35), border="white", las=1,xlab="",ylab="bieg", yaxt="n", ylim=c(0,6), main="", xaxt="n", cex.lab=2)
 abline(h=1:5, col="white", lwd=3)
 abline(v=19:35, col="white", lwd=3)
 axis(1,19:35, col="white", col.ticks="black")
 abline(v=26, lty=3)
 
-hist((metro/60), col="grey", 19:35, xlim=c(19,35), border="white", las=1,xlab="",ylab="metro", yaxt="n", ylim=c(0,6), main="", xaxt="n")
+hist((metro/60), col="grey", 19:35, xlim=c(19,35), border="white", las=1,xlab="",ylab="metro", yaxt="n", ylim=c(0,6), main="", xaxt="n", cex.lab=2)
 abline(h=1:5, col="white", lwd=3)
 abline(v=19:35, col="white", lwd=3)
 axis(1,19:35, col="white", col.ticks="black")
@@ -60,17 +60,17 @@ abline(v=26, lty=3)
 
 
 par(mfrow=c(3,1), mar=c(3,5,1,1))
-plot(ecdf(rower/60),las=1,ylab="rower",xlab="",main="", xlim=c(19,35),bty="n", lwd=3, yaxt="n")
+plot(ecdf(rower/60),las=1,ylab="rower",xlab="",main="", xlim=c(19,35),bty="n", lwd=3, yaxt="n", cex.lab=2)
 axis(1,19:35, col="white", col.ticks="black")
 axis(2,seq(0,1,0.2), paste0(seq(0,100,20),"%"), col="white", col.ticks="white", las=1)
 abline(v=26, lty=3)
 
-plot(ecdf(bieg/60),las=1,ylab="bieg",xlab="",main="", xlim=c(19,35), bty="n", lwd=3, yaxt="n")
+plot(ecdf(bieg/60),las=1,ylab="bieg",xlab="",main="", xlim=c(19,35), bty="n", lwd=3, yaxt="n", cex.lab=2)
 axis(1,19:35, col="white", col.ticks="black")
 axis(2,seq(0,1,0.2), paste0(seq(0,100,20),"%"), col="white", col.ticks="white", las=1)
 abline(v=26, lty=3)
 
-plot(ecdf(metro/60),las=1,ylab="metro",xlab="",main="", xlim=c(19,35),  bty="n", lwd=3, yaxt="n")
+plot(ecdf(metro/60),las=1,ylab="metro",xlab="",main="", xlim=c(19,35),  bty="n", lwd=3, yaxt="n", cex.lab=2)
 axis(1,19:35, col="white", col.ticks="black")
 axis(2,seq(0,1,0.2), paste0(seq(0,100,20),"%"), col="white", col.ticks="white", las=1)
 abline(v=26, lty=3)
