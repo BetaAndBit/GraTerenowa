@@ -1,0 +1,113 @@
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(comment = NA, results = "asis", comment = NA, tidy = F)
+
+```
+
+```{r, echo=FALSE}
+
+dat <- structure(list(V1 = structure(c(5L, 24L, 37L, 47L, 57L, 48L, 
+56L, 4L, 32L, 26L, 31L, 34L, 27L, 6L, 49L, 35L, 51L, 17L, 16L, 
+8L, 55L, 58L, 10L, 2L, 46L, 42L, 43L, 44L, 50L, 53L), .Label = c("Adam Mickiewicz", 
+"Adam Zagajewski", "Albert Camus", "Bolesław Leśmian", "Bolesław Prus", 
+"Bruno Schulz", "Cyprian Norwid", "Czesław Miłosz", "Emil Zola", 
+"Ewa Lipska", "Fiodor Dostojewski", "Franz Kafka", "Gabriel Garcia Marquez", 
+"George Orwell", "Gustaw Flaubert", "Gustaw Herling-Grudziński", 
+"Hanna Krall", "Homer", "Honoriusz Balzak", "Horacy", "Ignacy Krasicki", 
+"Irit Amiel", "Jan Chryzostom Pasek", "Jan Kasprowicz", "Jan Kochanowski", 
+"Jan Lechoń", "Jarosław Iwaszkiewicz", "Johann Wolfgang Goethe", 
+"John Steinbeck", "Joseph Conrad", "Julian Przyboś", "Julian Tuwim", 
+"Juliusz Słowacki", "Konstanty Ildefons Gałczyński", "Krzysztof Kamil Baczyński", 
+"Kurt Vonnegut", "Leopold Staff", "Michaił Bułhakow", "Miguel Cervantes", 
+"Mikołaj Sęp Szarzyński ", "Milan Kundera", "Miron Białoszewski", 
+"Ryszard Kapuściński", "Sławomir Mrożek", "Sofokles", "Stanisław Barańczak", 
+"Stanisław Wyspiański", "Stefan Żeromski", "Tadeusz Borowski", 
+"Tadeusz Konwicki", "Tadeusz Różewicz", "Umberto Eco", "Wiesław Myśliwski", 
+"William Szekspir", "Wisława Szymborska", "Witold Gombrowicz", 
+"Władysław Stanisław Reymont", "Zbigniew Herbert"), class = "factor"), 
+    V2 = c(1847L, 1860L, 1878L, 1869L, 1867L, 1864L, 1904L, 1877L, 
+    1894L, 1899L, 1901L, 1905L, 1894L, 1892L, 1922L, 1921L, 1921L, 
+    1935L, 1919L, 1911L, 1923L, 1924L, 1945L, 1945L, 1946L, 1922L, 
+    1932L, 1930L, 1926L, 1932L), V3 = c(1912, 1926, 1957, 1907, 
+    1925, 1925, 1969, 1937, 1953, 1956, 1970, 1953, 1980, 1942, 
+    1951, 1944, 2020, 2020, 2000, 2004, 2012, 1998, 2020, 2020, 
+    2020, 1982, 2007, 2013, 2020, 2020), V4 = structure(c(13L, 
+    31L, 22L, 57L, 3L, 14L, 30L, 23L, 51L, 34L, 49L, 36L, 42L, 
+    50L, 21L, 4L, 17L, 27L, 10L, 58L, 53L, 20L, 56L, 46L, 43L, 
+    55L, 45L, 25L, 12L, 33L), .Label = c(" Antygona", " Bema pamięci żałobny rapsod", 
+    " Chłopi", " Dwie miłości", " Dziady cz. IV", " Faust", 
+    " Hamlet", " Iliada i Odyseja", " Imię róży", " Inny świat", 
+    " Kordian", " Kronika wypadków miłosnych", " Lalka", " Ludzie bezdomni", 
+    " Mistrz i Małgorzata", " Monachomachia", " Nic w płaszczu Prospera", 
+    " Ojciec Goriot", " Pamiętniki", " Pan Cogito", " Pożegnanie z Marią", 
+    " Ptakom niebieskim", " Sad rozstajny", " Sto lat samotności", 
+    " Tango", " Zbrodnia i kara", " Zdążyć przed Panem Bogiem", 
+    "Don Kichote", "Dżuma", "Ferdydurke", "Hymny", "Jądro ciemności", 
+    "Kamien na kamieniu", "Karmazynowy poemat", "Kocia kołyska", 
+    "Koniec świata", "Myszy i ludzie", "Nana", "Nieznośna lekkość bytu", 
+    "Osmaleni", "Pani Bovary", "Panny z Wilka", "Pegaz zdębiał", 
+    "Pieśni", "Podróże z Herodotem", "Powrót", "Proces", 
+    "Rok 1984", "Równanie serca", "Sklepy cynamonowe", "Sokrates tańczący", 
+    "Sonety", "Sto wierszy – sto pociech", "Treny", "Trzydzieści lat wierszy", 
+    "Wakacje mizantropa", "Wesele", "Zniewolony umysł"), class = "factor"), 
+    V5 = c(1889L, 1921L, 1905L, 1901L, 1908L, 1899L, 1937L, 1912L, 
+    1920L, 1920L, 1938L, 1930L, 1932L, 1933L, 1947L, 1940L, 1948L, 
+    1977L, 1953L, 1953L, 1997L, 1974L, 1993L, 2003L, 1995L, 1982L, 
+    2004L, 1964L, 1974L, 1984L)), .Names = c("V1", "V2", "V3", 
+"V4", "V5"), row.names = c(12L, 15L, 16L, 17L, 18L, 19L, 20L, 
+21L, 22L, 23L, 24L, 25L, 26L, 27L, 28L, 29L, 30L, 32L, 33L, 34L, 
+35L, 36L, 37L, 38L, 39L, 40L, 41L, 42L, 43L, 55L))
+class(dat) <- "data.frame"
+
+```
+
+## Biblioteka
+
+Beta przegląda kanon lektur szkolnych. 
+
+Poniższy wykres pokazuje zbiór lektur wraz z datą ich pierwszej publikacji oraz latami urodzin i śmierci autorów tych dzieł.
+
+Czy potrafisz na bazie tego wykresu, odnaleźć najstarszego autora, żyjącego w roku w którym Zbigniew Herbert opublikował 'Pana Cogito'?
+
+Jako rozwiązanie podaj nazwisko tego autora (wielkość liter nie ma znaczenia).
+
+.
+
+```{r, echo=FALSE, fig.width=10, fig.height=9, dev='svg', warning=FALSE, message=FALSE}
+
+dat <- dat[order(dat$V5),]
+
+x1 <- as.numeric(as.character(dat[,2]))
+x2 <- as.numeric(as.character(dat[,3]))
+x3 <- as.numeric(as.character(dat[,5]))
+
+dat[,4] <- gsub(as.character(dat[,4]), pattern="^ ", replacement="")
+
+
+par(mar=c(2,2,2,15))
+plot(x2,seq_along(x1), xlim=c(1800,2005), ylim=c(-0.5,31), pch=19, cex=0.2, yaxt="n", ylab="", bty="n", type="n", xaxt="n", xlab="")
+par(xpd=NA)
+for(i in seq_along(x1))
+  lines(c(x1[i], 2020),i*c(1,1), lty=2, col="grey85")
+par(xpd=FALSE)
+rect(x1,seq_along(x1),x2,seq_along(x2)+0.8, border="grey90", col="grey90")
+for(i in seq_along(x1))
+  for(j in seq(x1[i]+10, x2[i], 20))
+    rect(j,i,min(x2[i],j+10),i+0.8, border="grey93", col="grey93")
+for(i in seq_along(x1))
+  for(j in seq(x1[i]+10, x2[i], 10))
+    lines(j*c(1,1), i+c(0,0.8), col="white", lwd=2.5)
+points(x3,seq_along(x3)+0.4, pch=19, col="red", cex=2)
+axis(1, seq(1850,2020, 10), cex.axis=0.8, line = -1.5)
+axis(3, seq(1850,2020, 10), cex.axis=0.8, line = -0.7)
+axis(4,
+     seq_along(x1)+0.3,
+     paste0(dat[,4], " (", dat[,5], ")"), 
+     las=1, cex.axis=1.05,
+     col="white")
+text(x1 - 2,
+     seq_along(x3)+0.4,
+     paste0(dat[,1], " (", dat[,2],"-", ifelse(dat[,3] < 2015, dat[,3], ""),")"), 
+     adj=c(1,0.5), cex=0.9, col="black")
+
+```
