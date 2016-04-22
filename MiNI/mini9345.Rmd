@@ -1,0 +1,78 @@
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(comment = NA, results = "asis", comment = NA, tidy = F)
+```
+
+## The IT Crowd
+
+Beta i Bit siedzą na tarasie wieży Montparnasse. Patrzą na zegarek i okazuje się, że muszą w 26 minut dostać się pod wieżę Eiffela.
+
+Mają do wyboru albo biec, albo jechać metrem albo jechać rowerem.
+
+Co wybrać? Metro jest szybkie, ale co jeżeli trzeba będzie długo czekać na kolejny pociąg? Rower jest szybki i wygodny ale co jeżeli nie będzie wolnego na stacji z miejskimi rowerami? Bieg na taki dystans to spory wysiłek i nie ma gwarancji że zdążą.
+
+Bit szybko wygrzebał z Internetu szacunki czasów przejazdów tymi trzema środkami transportu. Są one przedstawione na poniższym wykresie za pomocą dystrybuanty oraz histogramu.
+
+Patrząc na czasy przemieszczania się różnymi środkami transportu, jako wynik napisz po przecinkach procent szansy, że zdążą dotrzeć do wieży Eiffela w 27 minut jadąc metrem, biegnąc i jadąc rowerem (nie trzeba pisać znaku `%`, przykładowy format: `50,50,50`).
+
+
+```{r, echo=FALSE, fig.width=6, fig.height=6, dev='svg', warning=FALSE, message=FALSE}
+set.seed(1313)
+
+tim3 <- c(19,19,19,24,24,29,29,34,34,34)*60 + round(runif(10)*30)
+tim1 <- round(seq(24,30,length.out=10)*60) + round(runif(10)*30)
+tim2 <- 27*60 + qnorm(seq(0,1,length.out=12)[2:11])*60 + round(runif(10)*30)
+
+wielkiWyscig <- data.frame(rower = sample(tim3),
+                           bieg = round(sample(tim2)),
+                           metro = sample(tim1))
+
+#wielkiWyscig$bieg <- tim2
+
+wielkiWyscig[c(1,2),1] <- wielkiWyscig[c(2,1),1]
+wielkiWyscig[c(1,4),2] <- wielkiWyscig[c(4,1),2]
+wielkiWyscig[c(1,8),3] <- wielkiWyscig[c(8,1),3]
+
+attach(wielkiWyscig)
+
+
+
+par(mfrow=c(3,1), mar=c(2,5,0,1))
+hist((rower/60), col="grey", 19:35, xlim=c(19,35), border="white", las=1,xlab="",ylab="rower", yaxt="n", ylim=c(0,6), main="", xaxt="n")
+abline(h=1:5, col="white", lwd=3)
+abline(v=19:35, col="white", lwd=3)
+axis(1,19:35, col="white", col.ticks="black")
+abline(v=26, lty=3)
+
+hist((bieg/60), col="grey", 19:35, xlim=c(19,35), border="white", las=1,xlab="",ylab="bieg", yaxt="n", ylim=c(0,6), main="", xaxt="n")
+abline(h=1:5, col="white", lwd=3)
+abline(v=19:35, col="white", lwd=3)
+axis(1,19:35, col="white", col.ticks="black")
+abline(v=26, lty=3)
+
+hist((metro/60), col="grey", 19:35, xlim=c(19,35), border="white", las=1,xlab="",ylab="metro", yaxt="n", ylim=c(0,6), main="", xaxt="n")
+abline(h=1:5, col="white", lwd=3)
+abline(v=19:35, col="white", lwd=3)
+axis(1,19:35, col="white", col.ticks="black")
+abline(v=26, lty=3)
+
+
+
+
+par(mfrow=c(3,1), mar=c(3,5,1,1))
+plot(ecdf(rower/60),las=1,ylab="rower",xlab="",main="", xlim=c(19,35),bty="n", lwd=3, yaxt="n")
+axis(1,19:35, col="white", col.ticks="black")
+axis(2,seq(0,1,0.2), paste0(seq(0,100,20),"%"), col="white", col.ticks="white", las=1)
+abline(v=26, lty=3)
+
+plot(ecdf(bieg/60),las=1,ylab="bieg",xlab="",main="", xlim=c(19,35), bty="n", lwd=3, yaxt="n")
+axis(1,19:35, col="white", col.ticks="black")
+axis(2,seq(0,1,0.2), paste0(seq(0,100,20),"%"), col="white", col.ticks="white", las=1)
+abline(v=26, lty=3)
+
+plot(ecdf(metro/60),las=1,ylab="metro",xlab="",main="", xlim=c(19,35),  bty="n", lwd=3, yaxt="n")
+axis(1,19:35, col="white", col.ticks="black")
+axis(2,seq(0,1,0.2), paste0(seq(0,100,20),"%"), col="white", col.ticks="white", las=1)
+abline(v=26, lty=3)
+
+```
