@@ -16,6 +16,8 @@ Zadanie: Znajdź miesiąc, w którym najwięcej kredy zużyła trójka: Hugon S.
 
 http://betabit.wiki/app/pl/locations/1/tasks/6717/
 
+![](mini1313.png)
+
 ## Zadanie 2:
 
 Odczytaj z wykresu kiedy Bit przeczytał najwięcej podręcznika
