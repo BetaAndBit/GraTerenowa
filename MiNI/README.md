@@ -53,7 +53,7 @@ http://betabit.wiki/app/pl/locations/1/tasks/9345/
 
 ## Zadanie 6:
 
-Pomóż Becie i Bitowi znaleźć najlepszy środek tranposrtu w Paryżu
+Pomóż Becie odszukać najstarszego autora lektury
 
 http://betabit.wiki/app/pl/locations/1/tasks/8835/
 
