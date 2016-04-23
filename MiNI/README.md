@@ -36,3 +36,9 @@ Pomóż Bitowi wybrać serial na maraton filmowy
 
 http://betabit.wiki/app/pl/locations/1/tasks/6911/
 
+## Zadanie 5:
+
+Pomóż Becie i Bitowi znaleźć najlepszy środek tranposrtu w Paryżu
+
+http://betabit.wiki/app/pl/locations/1/tasks/9345/
+
