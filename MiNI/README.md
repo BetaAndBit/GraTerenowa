@@ -48,4 +48,13 @@ Pomóż Becie i Bitowi znaleźć najlepszy środek tranposrtu w Paryżu
 
 http://betabit.wiki/app/pl/locations/1/tasks/9345/
 
-![](mini9435.png)
+![](mini9345.png)
+
+
+## Zadanie 6:
+
+Pomóż Becie i Bitowi znaleźć najlepszy środek tranposrtu w Paryżu
+
+http://betabit.wiki/app/pl/locations/1/tasks/8835/
+
+![](mini8835.png)
