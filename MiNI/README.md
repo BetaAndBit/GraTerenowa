@@ -16,7 +16,7 @@ Zadanie: Znajdź miesiąc, w którym najwięcej kredy zużyła trójka: Hugon S.
 
 http://betabit.wiki/app/pl/locations/1/tasks/6717/
 
-![](mini1313.png)
+![](mini6717.png)
 
 ## Zadanie 2:
 
@@ -24,6 +24,7 @@ Odczytaj z wykresu kiedy Bit przeczytał najwięcej podręcznika
 
 http://betabit.wiki/app/pl/locations/1/tasks/5353/
 
+![](mini5353.png)
 
 ## Zadanie 3:
 
@@ -31,6 +32,7 @@ Odczytaj z wykresu dane zakodowane przez ISOTYPE
 
 http://betabit.wiki/app/pl/locations/1/tasks/1313/
 
+![](mini1313.png)
 
 ## Zadanie 4:
 
@@ -38,9 +40,12 @@ Pomóż Bitowi wybrać serial na maraton filmowy
 
 http://betabit.wiki/app/pl/locations/1/tasks/6911/
 
+![](mini6911.png)
+
 ## Zadanie 5:
 
 Pomóż Becie i Bitowi znaleźć najlepszy środek tranposrtu w Paryżu
 
 http://betabit.wiki/app/pl/locations/1/tasks/9345/
 
+![](mini9435.png)
