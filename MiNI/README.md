@@ -58,3 +58,14 @@ Pomóż Becie odszukać najstarszego autora lektury
 http://betabit.wiki/app/pl/locations/1/tasks/8835/
 
 ![](mini8835.png)
+
+
+## Zadanie 7:
+
+Pomóż B&B odnaleźć laptopa z ważnymi danymi
+
+http://betabit.wiki/app/pl/locations/1/tasks/2202/
+
+![](mini2202.png)
+
+
