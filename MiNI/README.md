@@ -69,3 +69,13 @@ http://betabit.wiki/app/pl/locations/1/tasks/2202/
 ![](mini2202.png)
 
 
+
+## Zadanie 8:
+
+Pomóż B&B odczytać mapę Charlesa Minarda
+
+http://betabit.wiki/app/pl/locations/1/tasks/0999/
+
+![](mini0999.png)
+
+
