@@ -79,3 +79,14 @@ http://betabit.wiki/app/pl/locations/1/tasks/0999/
 ![](mini0999.png)
 
 
+
+
+## Zadanie 9:
+
+Pomóż B&B odczytać wykres Florence Nightingale
+
+http://betabit.wiki/app/pl/locations/1/tasks/0998/
+
+![](mini0998.png)
+
+
