@@ -1,0 +1,27 @@
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(comment = NA, results = "asis", comment = NA, tidy = F)
+```
+
+## Pokój X01
+
+Bit trafił w internecie na kurs programowania o nazwie [Pogromcy Danych](http://pogromcydanych.icm.edu.pl/).
+
+```{r, results='asis', echo = FALSE}
+cat('<br>')	
+suppressMessages({
+library(DT)
+library(dplyr)
+library(PogromcyDanych)
+})
+auta2012[, c('Cena', 'Marka', 'Rok.produkcji')] %>%
+	rename(Rok = Rok.produkcji) %>% unique %>% 
+	filter(Marka %in% c('Kia', 'Volvo', 'Mitsubishi')) %>%
+	datatable(options = list(pageLength=5))
+cat('<br>')	
+```
+
+Tam zetknął się z danymi dotyczącymi marek, cen i roku produkcji niektórych marek aut z 2012 roku, które pobrano z serwisu [otomoto.pl](otomoto.pl)
+
+Pomóż mu znaleźć cenę najstarszego dostępnego samochodu marki `Volvo`, aby mógł zdobyć tytuł Pogromcy Danych!
+
