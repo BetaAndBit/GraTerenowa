@@ -1,0 +1,29 @@
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(comment = NA, results = "asis", comment = NA, tidy = F)
+```
+
+## Pokój X02
+
+Beta podczas szkolnej wycieczki do angielskiego muzeum kupiła interaktywną mapę świata, która przedstawia kontury państw wraz z ich stolicami i informacjami o liczności populacji w stolicy.
+
+```{r, results='asis', echo = FALSE}
+cat('<br>')	
+suppressMessages({
+library(rbokeh)
+library(maps)
+})
+
+data(world.cities)
+caps <- subset(world.cities, capital == 1)
+caps$population <- prettyNum(caps$pop, big.mark = ",")
+figure(width = 800, padding_factor = 0) %>%
+  ly_map("world", col = "gray") %>%
+  ly_points(long, lat, data = caps, size = 5,
+    hover = c(name, country.etc, population))
+cat('<br>')	
+```
+
+Czy jesteś w stanie odczytać populację stolicy państwa z Afryki wysuniętego najdalej na zachód? Jaka jest nazwa stolicy położenj możliwie najdalej na północ spośród całego globu?
+
+Odpowiedź podaj w formacie `liczba NazwaStolicy`. Podając liczbę wpisz przecinek (`,`) tak by rozdzielić tysiące od jedności w liczbie, tak jak jest to podane na mapie.
