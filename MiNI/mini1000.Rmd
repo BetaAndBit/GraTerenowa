@@ -16,7 +16,7 @@ library(PogromcyDanych)
 auta2012[, c('Cena', 'Marka', 'Rok.produkcji')] %>%
 	rename(Rok = Rok.produkcji) %>% unique %>% 
 	filter(Marka %in% c('Kia', 'Volvo', 'Mitsubishi')) %>%
-	datatable(options = list(pageLength=5))
+	datatable(options = list(pageLength=5), rownames = FALSE)
 cat('<br>')	
 ```
 
