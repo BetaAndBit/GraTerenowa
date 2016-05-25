@@ -17,6 +17,6 @@ library(d3heatmap)
 d3heatmap(mtcars, scale = "column", colors = "Spectral")
 ```
 
-Sąsiad Beta i Bity jest kolekcjonerem starych samochodów. Zastanawia sie włąsnie nad kupnem historycznego samochodu. Pomóż Becie i Bitowi, na bazie danych, doradzić, który samochód jest najlepszy.
+Sąsiad Bety i Bita jest kolekcjonerem starych aut. Zastanawia sie właśnie nad kupnem historycznego samochodu. Pomóż Becie i Bitowi, na bazie danych, doradzić, który samochód jest najlepszy.
 
 Dane pochodzą z magazynu [1974 Motor Trend US (opis danych)](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/mtcars.html) i porównują zużycie paliwa i 10 aspektów projektu i wydajności 32 modeli samochodów.
