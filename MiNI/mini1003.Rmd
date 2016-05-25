@@ -1,10 +1,10 @@
 ```{r setup, include=FALSE}
 library(knitr)
-opts_chunk$set(comment = NA, results = "asis", comment = NA, 
+opts_chunk$set(comment = NA, results = "asis", comment = NA, eval = FALSE,
 							 tidy = F, echo = FALSE, warning = FALSE, message = FALSE, error = FALSE)
 ```
 
-```{r}
+```{r, eval = TRUE}
 suppressMessages({
 library("dplyr")
 library("readr")
@@ -18,6 +18,8 @@ library("ggplot2")
 library("htmltools")
 library("treemap")
 })
+```
+```{r}
 path <- function(x) paste0("https://raw.githubusercontent.com/phalt/pokeapi/master/data/v2/csv/", x)
 
 dfpkmn <- read_csv(path("pokemon.csv")) %>% 
@@ -161,71 +163,71 @@ ds2 <- df %>%
   mutate(color = hex_to_rgba(color, 0.05)) %>% 
   list.parse3()
 
-urlimage <- "https://raw.githubusercontent.com/phalt/pokeapi/master/data/Pokemon_XY_Sprites/"
+# urlimage <- "https://raw.githubusercontent.com/phalt/pokeapi/master/data/Pokemon_XY_Sprites/"
+# 
+# tooltip <- c("pokemon", "type_1", "type_2",
+#              "weight", "height",
+#              "attack",  "defense",
+#              "special_attack", "special_defense") %>%
+#   map(function(x){
+#     tags$tr(
+#       tags$th(str_replace_all(str_to_title(x), "_", " ")),
+#       tags$td(paste0("{point.", x, "}"))
+#     )
+#   }) %>% 
+#   do.call(tagList, .) %>% 
+#   tagList(
+#     tags$img(src = paste0(urlimage, "{point.url_image}"),
+#              width = "125px", height = "125px")
+#   ) %>% 
+#   as.character()
 
-tooltip <- c("pokemon", "type_1", "type_2",
-             "weight", "height",
-             "attack",  "defense",
-             "special_attack", "special_defense") %>%
-  map(function(x){
-    tags$tr(
-      tags$th(str_replace_all(str_to_title(x), "_", " ")),
-      tags$td(paste0("{point.", x, "}"))
-    )
-  }) %>% 
-  do.call(tagList, .) %>% 
-  tagList(
-    tags$img(src = paste0(urlimage, "{point.url_image}"),
-             width = "125px", height = "125px")
-  ) %>% 
-  as.character()
-
-hctsne <- highchart() %>% 
-  hc_chart(zoomType = "xy") %>% 
-  hc_xAxis(minRange = diff(range(df$x))/5) %>%
-  hc_yAxis(minRange = diff(range(df$y))/5) %>%
-  hc_add_series(data = ds,
-                type = "scatter",
-                name = "pokemons",
-                states = list(hover = list(halo = list(
-                  size  = 50,
-                  attributes = list(
-                    opacity = 1)
-                )))) %>%
-  hc_add_series(data = ds2, type = "scatter",
-                marker = list(radius = 75, symbol = "circle"),
-                zIndex = -3,  enableMouseTracking = FALSE,
-                linkedTo = ":previous") %>%
-  hc_plotOptions(series = list()) %>%  
-  hc_tooltip(
-    useHTML = TRUE,
-    borderRadius = 0,
-    borderWidth = 5,
-    headerFormat = "<table>",
-    pointFormat = tooltip,
-    footerFormat = "</table>"
-  ) %>% 
-  hc_add_theme(
-    hc_theme_null(
-      chart = list(
-        backgroundColor = "transparent",
-        style = list(
-          fontFamily = "Roboto"
-          )
-        )
-      )
-    )
-
-hctsne
+# hctsne <- highchart() %>% 
+#   hc_chart(zoomType = "xy") %>% 
+#   hc_xAxis(minRange = diff(range(df$x))/5) %>%
+#   hc_yAxis(minRange = diff(range(df$y))/5) %>%
+#   hc_add_series(data = ds,
+#                 type = "scatter",
+#                 name = "pokemons",
+#                 states = list(hover = list(halo = list(
+#                   size  = 50,
+#                   attributes = list(
+#                     opacity = 1)
+#                 )))) %>%
+#   hc_add_series(data = ds2, type = "scatter",
+#                 marker = list(radius = 75, symbol = "circle"),
+#                 zIndex = -3,  enableMouseTracking = FALSE,
+#                 linkedTo = ":previous") %>%
+#   hc_plotOptions(series = list()) %>%  
+#   hc_tooltip(
+#     useHTML = TRUE,
+#     borderRadius = 0,
+#     borderWidth = 5,
+#     headerFormat = "<table>",
+#     pointFormat = tooltip,
+#     footerFormat = "</table>"
+#   ) %>% 
+#   hc_add_theme(
+#     hc_theme_null(
+#       chart = list(
+#         backgroundColor = "transparent",
+#         style = list(
+#           fontFamily = "Roboto"
+#           )
+#         )
+#       )
+#     )
+# 
+# #hctsne
 
 ```
 
 **Zadanie:** Pomóż naszym bohaterom odczytać jakim procentem Pokemon'ów typu *Dark* jest podtyp *Ice*, a następnie podaj nazwę najmnieszego podtypu w największym typie.  Wynik wpisz w formacie `liczba nazwa`, gdzie liczba to procent z dokładnością do 2 miejsc po przecinku.
 
 
-```{r}
+```{r, results = 'hide', echo = FALSE}
 set.seed(3514)
-
+invisible(
 tm <- df %>% 
   mutate(type_2 = ifelse(is.na(type_2), paste("only", type_1), type_2),
          type_1 = type_1) %>% 
@@ -234,6 +236,10 @@ tm <- df %>%
   ungroup() %>% 
   treemap::treemap(index = c("type_1", "type_2"),
                    vSize = "n", vColor = "type_1")
+)
+```
+
+```{r}
 tm$tm <- tm$tm %>%
   tbl_df() %>% 
   left_join(df %>% select(type_1, type_2, color_f) %>% distinct(), by = c("type_1", "type_2")) %>%
@@ -244,7 +250,11 @@ tm$tm <- tm$tm %>%
 hctm <- highchart() %>% 
   hc_add_series_treemap(tm, allowDrillToNode = TRUE,
                         layoutAlgorithm = "squarified")
+# save(hctm, file = 'MiNI/hctm.rda')
+```
 
+```{r, eval = TRUE}
+load('hctm.rda')
 hctm
 ```
 
