@@ -12,15 +12,14 @@ suppressMessages({
 library(DT)
 library(dplyr)
 library(PogromcyDanych)
+library(jsonlite)
 })
+polish <- fromJSON("polish.json")
 auta2012[, c('Cena', 'Marka', 'Rok.produkcji')] %>%
 	rename(Rok = Rok.produkcji) %>% unique %>% 
 	filter(Marka %in% c('Kia', 'Volvo', 'Mitsubishi')) %>%
-	datatable(options = list(pageLength=5), rownames = FALSE)
+	datatable(options = list(pageLength=5, language=polish), rownames = FALSE)
 cat('<br>')	
 ```
 
 Bit trafił w internecie na kurs programowania o nazwie [Pogromcy Danych](http://pogromcydanych.icm.edu.pl/). To właśnie tam zetknął się z danymi dotyczącymi marek, cen i roku produkcji niektórych marek aut z 2012 roku, które pobrano z serwisu [otomoto.pl](otomoto.pl)
-
-
-
