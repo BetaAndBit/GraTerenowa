@@ -1,0 +1,34 @@
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(comment = NA, results = "asis", comment = NA, 
+							 tidy = F, echo = FALSE, warning = FALSE, message = FALSE, error = FALSE)
+```
+
+```{r}
+cat('<br>')
+```
+
+
+**Zadanie:** Wskaż grupę najbardziej dotkniętą stratami podczas zatonięcia Titanica. Straty licz w procentach w danej klasie podrużujących.
+
+```{r}
+# devtools::install_github('mattflor/chorddiag')
+library(chorddiag)
+library(dplyr)
+titanic_tbl <- dplyr::tbl_dt(Titanic)
+titanic_tbl <- titanic_tbl %>%
+    mutate_each(funs(factor), Class:Survived)
+by_class_survival <- titanic_tbl %>%
+    group_by(Class, Survived) %>%
+    summarize(Count = sum(N))
+titanic.mat <- matrix(by_class_survival$Count, nrow = 4, ncol = 2)
+dimnames(titanic.mat ) <- list(Class = levels(titanic_tbl$Class),
+                               Survival = levels(titanic_tbl$Survived))
+
+groupColors <- c("#2171b5", "#6baed6", "#bdd7e7", "#bababa", "#d7191c", "#1a9641")
+chorddiag(titanic.mat, type = "bipartite", 
+          groupColors = groupColors,
+          tickInterval = 50)
+```
+
+Po wspólnym wyjściu do kina z rodzicami Beta i Bit zastanawiali się, kto najbardziej ucierpiał podczas dziewiczego rejsu Titanica. Pomóż naszym bohaterom rozwikłać kolejną zagadkę korzystając z wykresu nazywanego `Chord Diag`, o którym więcej można przeczytać [tutaj](http://bl.ocks.org/mbostock/1046712).
