@@ -1,0 +1,10 @@
+Pokój 17, Sekretariat   0999
+Pokój 27, Dziekanat   2202
+Pokój 107   8835
+Pokój 222, Biolab   1313
+Pokój 319, Czytelnia    9345
+Pokój 323, IT   5353
+Pokój 432   8888
+Pokój 460, Biblioteka   6911
+Pokój 537   6717
+Pokój 542   0998
