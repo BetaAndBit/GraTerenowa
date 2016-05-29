@@ -222,7 +222,7 @@ ds2 <- df %>%
 
 ```
 
-**Zadanie:** Pomóż naszym bohaterom odczytać jakim procentem Pokemon'ów typu *Dark* jest podtyp *Ice*, a następnie podaj nazwę najmnieszego podtypu w największym typie.  Wynik wpisz w formacie `liczba nazwa`, gdzie liczba to procent z dokładnością do 2 miejsc po przecinku.
+**Zadanie:** Pomóż naszym bohaterom odczytać jakim procentem Pokemon'ów o wodzącym typie *Dark (Main dark)* jest drugorzędny podtyp *Ice*, a następnie podaj nazwę najmnieszego drugorzędnego podtypu w największym wodzącym typie.  Wynik wpisz w formacie `liczba nazwa`, gdzie liczba to procent z dokładnością do 2 miejsc po przecinku.
 
 
 ```{r, results = 'hide', echo = FALSE}
