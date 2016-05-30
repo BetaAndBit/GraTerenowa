@@ -1,0 +1,71 @@
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(comment = NA, results = "asis", comment = NA, 
+							 tidy = F, echo = FALSE, warning = FALSE, message = FALSE, error = FALSE)
+```
+
+```{r}
+cat('<br>')
+```
+
+**Zadanie:** W jakim miesiącu stosunek stopni Celsjusza do opadów w mm był najmniejszy? Jaka jest wartość największego stosunku stopni Celsjusza do opadów w mm w zaprezentowanym wykresie? Jaki procent w ciągu przedstawionego półrocza stanowią godziny słoneczne? Odpowiedź podaj w formacie `miesiąc,wartość,procent`, gdzie wartość podaj w zaokrągleniu do 2 miejsca po przecinku a przy procentach podaj samą liczbę bez znaku `%`.
+
+
+```{r}
+library(highcharter)
+
+rainfall <- c(49.9, 71.5, 106.4, 129.2, 144, 176)#,
+              #135.6, 148.5, 216.4, 194.1, 95.6, 54.4)
+
+temperature <- c(7, 6.9, 9.5, 14.5, 18.2, 21.5)#,
+                 #25.2, 26.5, 23.3, 18.3, 13.9, 9.6)
+
+col1 <- hc_get_colors()[3]
+col2 <- hc_get_colors()[2]
+
+
+highchart(width="100%", height="320px") %>% 
+  hc_title(text = "Klimat Tokyo") %>% 
+  hc_legend(enabled = FALSE) %>% 
+  hc_xAxis(categories = c("I", "II", "III", "IV", "V", "VI")) %>%
+  												#"VII", "VIII", "IX", "X", "XI", "XII")) %>% 
+  hc_yAxis_multiples(
+    list(
+      title = list(text = "Temperatura"),
+      align = "left",
+      showFirstLabel = FALSE,
+      showLastLabel = FALSE,
+      labels = list(format = "{value} &#176;C", useHTML = TRUE)
+    ),
+    list(
+      title = list(text = "Opady"),
+      align = "right",
+      showFirstLabel = FALSE,
+      showLastLabel = FALSE,
+      labels = list(format = "{value} mm"),
+      opposite = TRUE
+    )
+  ) %>% 
+  hc_tooltip(formatter = JS("function(){
+                            if('Nasłonecznienie' == this.series.name){
+                            return  '<b>' + this.point.name + ': </b>' + this.y
+                            } else {
+                            unts = this.series.name == 'Opady' ? 'mm' : '&#176;C';
+                            return (this.x + ': ' + this.y + ' ' + unts)
+                            }}"),
+             useHTML = TRUE) %>% 
+  hc_add_series(name = "Opady", type = "column",
+                data = rainfall, yAxis = 1) %>% 
+  hc_add_series(name = "Temperatura", type = "spline",
+                data = temperature) %>% 
+  hc_add_series(name = "Nasłonecznienie", type = "pie",
+                data = list(list(y = 1010, name = "Słonecznych godzin",
+                                 sliced = TRUE, color = col1),
+                            list(y = 6740/2, name = "Niesłonecznych godzin (wliczając noce)",
+                                 color = col2,
+                                 dataLabels = list(enabled = FALSE))),
+                center = c('10%', 50),
+                size = 50)
+```
+
+Rodzice Beta i Bity rozważają wycieczkę do Tokyo, jednak chcą wybrać miesiąc w pierwszym półroczu, który jest najkorzystniejszy pod względem opadów w mm i średniej temperatury w stopniach Celsjusza. Czy jesteś w stanie odczytać te informacje z wykresu pogodowego?
