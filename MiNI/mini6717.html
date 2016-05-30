@@ -547,11 +547,9 @@
           .entries(data);
       }
       
-      if (opts.disabled != undefined){
         data.map(function(d, i){
-          d.disabled = opts.disabled[i]
+          d.disabled = i > 1;
         })
-      }
       
       nv.addGraph(function() {
         var chart = nv.models[opts.type]()
