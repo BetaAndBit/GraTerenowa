@@ -14,7 +14,8 @@ cat('<br>')
 # if (!require("devtools")) install.packages("devtools")
 # devtools::install_github("rstudio/d3heatmap")
 library(d3heatmap)
-d3heatmap(mtcars, scale = "column", colors = "Spectral")
+d3heatmap(mtcars, scale = "column", colors = "Spectral",Rowv = FALSE,Colv = FALSE,
+					width = "100%", height = "380px")
 ```
 
 Sąsiad Bety i Bita jest kolekcjonerem starych aut. Zastanawia sie właśnie nad kupnem historycznego samochodu. Pomóż Becie i Bitowi, na bazie danych, doradzić, który samochód jest najlepszy.
