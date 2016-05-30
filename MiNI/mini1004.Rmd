@@ -22,13 +22,15 @@ by_class_survival <- titanic_tbl %>%
     group_by(Class, Survived) %>%
     summarize(Count = sum(N))
 titanic.mat <- matrix(by_class_survival$Count, nrow = 4, ncol = 2)
-dimnames(titanic.mat ) <- list(Class = levels(titanic_tbl$Class),
-                               Survival = levels(titanic_tbl$Survived))
+dimnames(titanic.mat ) <- list(Klasa = c("1", "2", "3", "Załoga"),
+                               Przeżycie = c("Nie", "Tak"))
 
 groupColors <- c("#2171b5", "#6baed6", "#bdd7e7", "#bababa", "#d7191c", "#1a9641")
 chorddiag(titanic.mat, type = "bipartite", 
-          groupColors = groupColors,
-          tickInterval = 50)
+          groupColors = groupColors, groupnameFontsize =15,
+					groupnamePadding = 25,
+					categorynameFontsize = 18, categorynamePadding =40,
+          tickInterval = 50, margin = 50)
 ```
 
 Po wspólnym wyjściu do kina z rodzicami Beta i Bit zastanawiali się, kto najbardziej ucierpiał podczas dziewiczego rejsu Titanica. Pomóż naszym bohaterom rozwikłać kolejną zagadkę korzystając z wykresu nazywanego `Chord Diag`, o którym więcej można przeczytać [tutaj](http://bl.ocks.org/mbostock/1046712).
