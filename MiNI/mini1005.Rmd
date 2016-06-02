@@ -8,16 +8,22 @@ opts_chunk$set(comment = NA, results = "asis", comment = NA,
 cat('<br>')
 ```
 
-**Zadanie:** Z poniższej [mapy ciepła](https://en.wikipedia.org/wiki/Heat_map), w której kolory można porównywać w kolumnach, odczytaj który modelu samochodu ma największą liczbę gaźników (kolumna `carb`) oraz podaj róźnicę między najcięższym a najlżejszym modelem (kolumna `wt`, która oznacza wagę w 1000 funtów). Wynik podaj w formacie `nazwa_dla_carb róznica_dla_wt`, gdzie `różnica_dla_wt` powinna być zaokrąglona do 2 miejsca po przecinku.
+**Zadanie:** Z poniższej [mapy ciepła](https://en.wikipedia.org/wiki/Heat_map), w której kolory można porównywać w kolumnach, odczytaj który modelu samochodu jest najlżejszy, a który ma największą moc silnika. Wynik podaj w formacie `nazwa1,nazwa2`.
 
 ```{r}
 # if (!require("devtools")) install.packages("devtools")
 # devtools::install_github("rstudio/d3heatmap")
 library(d3heatmap)
+names(mtcars) <- c("", "cylindry", "poj. silnika", "konie mech.",
+									 "", "waga [kg]", "", "", 
+									 "automat", "biegi", "gaźniki")
+mtcars[,6]<- round(mtcars[,6]*0.453,3)
+mtcars <- mtcars[, -c(1,5,7,8)]
+
 d3heatmap(mtcars, scale = "column", colors = "Spectral",Rowv = FALSE,Colv = FALSE,
-					width = "100%", height = "380px")
+					width = "100%", height = "380px", xaxis_font_size = "10pt")
 ```
 
 Sąsiad Bety i Bita jest kolekcjonerem starych aut. Zastanawia sie właśnie nad kupnem historycznego samochodu. Pomóż Becie i Bitowi, na bazie danych, doradzić, który samochód jest najlepszy.
 
-Dane pochodzą z magazynu [1974 Motor Trend US (opis danych)](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/mtcars.html) i porównują zużycie paliwa oraz 10 aspektów projektu i wydajności 32 modeli samochodów.
+Dane pochodzą z magazynu [1974 Motor Trend US (opis danych)](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/mtcars.html) i porównują zużycie paliwa, wydajność oraz niektóre cechy 32 modeli samochodów.
