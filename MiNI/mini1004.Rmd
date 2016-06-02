@@ -9,7 +9,7 @@ cat('<br>')
 ```
 
 
-**Zadanie:** Wskaż grupę najbardziej dotkniętą stratami podczas zatonięcia Titanica. Straty licz w procentach w danej klasie podróżujących.
+**Zadanie:** Wskaż grupę najbardziej dotkniętą stratami podczas zatonięcia Titanica. Straty licz w procentach w danej klasie podróżujących. Jako rozwiązanie należy podać procent osób które utonęły w klasie o największej śmiertelności, z dokładnością do 2 miejsc po przecinku.
 
 ```{r}
 # devtools::install_github('mattflor/chorddiag')
