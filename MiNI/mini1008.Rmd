@@ -1,0 +1,41 @@
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(comment = NA, results = "asis", comment = NA, 
+							 tidy = F, echo = FALSE, warning = FALSE, message = FALSE, error = FALSE)
+```
+
+```{r}
+cat('<br>')
+```	
+
+**Zadanie:** Na poniższym wykresie strumieniowym (*ang. streamgraph*) odczytaj, których filmów przybywało najwięcej między rokiem 1980 a 2000?
+
+```{r}
+# devtools::install_github("hrbrmstr/streamgraph")
+suppressMessages({
+	library(streamgraph)
+	library(dplyr)
+	library(ggplot2movies)
+})
+ggplot2movies::movies %>%
+  select(year, Action, Animation, Comedy, Drama, Documentary, Romance, Short) %>%
+  tidyr::gather(genre, value, -year) %>%
+  group_by(year, genre) %>%
+  tally(wt=value) -> dat
+
+dat$genre <- as.factor(dat$genre)
+levels(dat$genre) <- c("Akcja", "Animowany", "Komedia", "Dokumentalny",
+											 "Dramat", "Romans", "Krótkometrażowy")
+
+streamgraph(dat, "genre", "n", "year", interpolate="cardinal",
+						width = "100%", height = "300px") %>%
+  sg_axis_x(20, "year", "%Y") %>%
+  sg_fill_brewer("PuOr")
+
+
+
+```
+
+Beta i Bit przeszukują serwisy internetowe w poszukiwaniu informacji o swoich ulubionych filmach i serialach. Czy [nie zawsze sensowny wykres strumieniowy](http://www.visualisingdata.com/2010/08/making-sense-of-streamgraphs/) pomoże odczytać potrzebne informacje?
+
+Dane pochodzą z serwisu [IMDB.com](http://imdb.com/) i przedstawiają filmy ocenione przez przynajmniej 1 użytkownika. Polityka pobierania udostępniania danych przez serwis zawarta jest [tutaj](http://www.imdb.com/help/show_leaf?infosource).
