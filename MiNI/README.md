@@ -102,3 +102,52 @@ http://betabit.wiki/app/pl/locations/1/tasks/8888/
 
 
 # Seria MIM UW
+
+## Zadanie 11
+
+http://betabit.wiki/app/pl/locations/1/tasks/1000/
+
+![](mini1000.png)
+
+## Zadanie 12
+
+http://betabit.wiki/app/pl/locations/1/tasks/1001/
+
+![](mini1001.png)
+
+## Zadanie 13
+
+http://betabit.wiki/app/pl/locations/1/tasks/1002/
+
+![](mini1002.png)
+
+## Zadanie 14
+
+http://betabit.wiki/app/pl/locations/1/tasks/1003/
+
+![](mini1003.png)
+
+## Zadanie 15
+
+http://betabit.wiki/app/pl/locations/1/tasks/1004/
+
+![](mini1004.png)
+
+## Zadanie 16
+
+http://betabit.wiki/app/pl/locations/1/tasks/1005/
+
+![](mini1005.png)
+
+## Zadanie 17
+
+http://betabit.wiki/app/pl/locations/1/tasks/1006/
+
+![](mini1006.png)
+
+## Zadanie 18
+
+http://betabit.wiki/app/pl/locations/1/tasks/1007/
+
+![](mini1007.png)
+
