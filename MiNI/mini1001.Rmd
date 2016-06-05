@@ -13,7 +13,7 @@ cat('<br>')
 ```{r, results='asis', echo = FALSE}
 #cat('<br>')	
 suppressMessages({
-library(rbokeh)
+#library(rbokeh)
 library(maps)
 library(dplyr)
 # library(ggmap)
@@ -28,7 +28,8 @@ caps <- world.cities %>%
 				 long >= -10,
 				 long <= 32,
 				 lat >= 37,
-				 lat <= 72)
+				 lat <= 72) %>%
+	mutate(pop = round(pop,-3))
 caps$population <- prettyNum(caps$pop, big.mark = " ")
 caps$population2<- cut(caps$pop,
 											 breaks=quantile(caps$pop, seq(0,1,0.25)),
@@ -60,5 +61,5 @@ caps$population2<- cut(caps$pop,
 cat('<br>')	
 ```
 
-Beta podczas szkolnej wycieczki do muzeum kupiła interaktywną mapę Europy, która przedstawia kontury państw wraz z ich stolicami i informacjami o liczności populacji w stolicy. Mapę stworzono w bibliotece [http://leafletjs.com/](http://leafletjs.com/).
+Beta podczas szkolnej wycieczki do muzeum kupiła interaktywną mapę Europy, która przedstawia kontury państw wraz z ich stolicami i informacjami o liczności populacji w stolicy. Dane są aktualne dla początku 2006 roku a ich opis można znaleźć [tutaj](http://svitsrv25.epfl.ch/R-doc/library/maps/html/world.cities.html). Mapę stworzono w bibliotece [http://leafletjs.com/](http://leafletjs.com/).
 
