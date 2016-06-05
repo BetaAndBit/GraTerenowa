@@ -1,29 +1,64 @@
 ```{r setup, include=FALSE}
 library(knitr)
-opts_chunk$set(comment = NA, results = "asis", comment = NA, tidy = F)
+opts_chunk$set(comment = NA, results = "asis", comment = NA, 
+							 tidy = F, echo = FALSE, warning = FALSE, message = FALSE, error = FALSE)
 ```
 
-## Pokój X02
+```{r}
+cat('<br>')
+```	
 
-Beta podczas szkolnej wycieczki do angielskiego muzeum kupiła interaktywną mapę świata, która przedstawia kontury państw wraz z ich stolicami i informacjami o liczności populacji w stolicy.
+**Zadanie:** Czy jesteś w stanie odczytać jaka jest suma populacji 2 najbardziej wysuniętych stolic na południe pomniejszona o populację najbardziej wysuniętej na północ europejskiej stolicy (stolicy Wysp Owczych)?
 
 ```{r, results='asis', echo = FALSE}
-cat('<br>')	
+#cat('<br>')	
 suppressMessages({
 library(rbokeh)
 library(maps)
+library(dplyr)
+# library(ggmap)
+# library(mapproj)
+# library(ggplot2)
+library(leaflet)
 })
 
 data(world.cities)
-caps <- subset(world.cities, capital == 1)
-caps$population <- prettyNum(caps$pop, big.mark = ",")
-figure(width = 800, padding_factor = 0) %>%
-  ly_map("world", col = "gray") %>%
-  ly_points(long, lat, data = caps, size = 5,
-    hover = c(name, country.etc, population))
+caps <- world.cities %>%
+	filter(capital == 1,
+				 long >= -10,
+				 long <= 32,
+				 lat >= 37,
+				 lat <= 72)
+caps$population <- prettyNum(caps$pop, big.mark = " ")
+caps$population2<- cut(caps$pop,
+											 breaks=quantile(caps$pop, seq(0,1,0.25)),
+											 include.lowest = TRUE,
+											 digits=7)
+
+# map <- get_map(location = 'Europe', zoom = 4)
+# ggmap(map) + geom_point(data=caps, 
+# 												aes(x=long,	y=lat, size=population2)) +
+# 	theme(legend.position="none")
+
+# figure(width = 800, padding_factor = 0) %>%
+#   ly_map("world", col = "gray") %>%
+#   ly_points(long, lat, data = caps, size = 5,
+#     hover = c(name, country.etc, population))
+
+      leaflet(width="100%", height="500px") %>%
+      addTiles() %>% 
+        addMarkers(caps$long,
+                   caps$lat,
+                   popup = paste(sep = "<br/>",
+                   							 paste0('<b><a href="https://pl.wikipedia.org/wiki/',caps$name,'">',caps$name,"</a></b>"),
+                   							 caps$population),
+        					 options = markerOptions(opacity=0.39)) 
+        					 	
+        					 	#paste(caps$name, caps$population, sep="\n"))
+
+
 cat('<br>')	
 ```
 
-Czy jesteś w stanie odczytać populację stolicy państwa z Afryki wysuniętego najdalej na zachód? Jaka jest nazwa stolicy położenj możliwie najdalej na północ spośród całego globu?
+Beta podczas szkolnej wycieczki do muzeum kupiła interaktywną mapę Europy, która przedstawia kontury państw wraz z ich stolicami i informacjami o liczności populacji w stolicy. Mapę stworzono w bibliotece [http://leafletjs.com/](http://leafletjs.com/).
 
-Odpowiedź podaj w formacie `liczba NazwaStolicy`. Podając liczbę wpisz przecinek (`,`) tak by rozdzielić tysiące od jedności w liczbie, tak jak jest to podane na mapie.
