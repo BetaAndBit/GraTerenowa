@@ -151,3 +151,9 @@ http://betabit.wiki/app/pl/locations/1/tasks/1007/
 
 ![](mini1007.png)
 
+## Zadanie 19
+
+http://betabit.wiki/app/pl/locations/1/tasks/1008/
+
+![](mini1008.png)
+
