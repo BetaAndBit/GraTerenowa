@@ -17,4 +17,4 @@ mapa_wykres
 
 Beta i Bit szukają optymalnej ceny za pokój do wynajęcia w Warszawie dla ich przyjaciela poznanego w Paryżu, który ma zamiar odwiedzić ich w wakacje.
 
-Dane pochodzą z serwisu [http://mi2.mini.pw.edu.pl:3838/CzasDojazdu/App/](http://mi2.mini.pw.edu.pl:3838/CzasDojazdu/App/).
+Dane pochodzą z serwisu [http://mi2.mini.pw.edu.pl:3838/CzasDojazdu/pl/](http://mi2.mini.pw.edu.pl:3838/CzasDojazdu/pl/).
