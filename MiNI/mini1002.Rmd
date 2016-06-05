@@ -1,16 +1,20 @@
 ```{r setup, include=FALSE}
 library(knitr)
-opts_chunk$set(comment = NA, results = "asis", comment = NA, tidy = F)
+opts_chunk$set(comment = NA, results = "asis", comment = NA, 
+							 tidy = F, echo = FALSE, warning = FALSE, message = FALSE, error = FALSE)
 ```
 
-<br>
+```{r}
+cat('<br>')
+```	
 **Zadanie:** Odczytaj z mapy średnich cen za wynajem pokoju: jaki jest stosunek średniej ceny za wynajem pokoju w dzielnicy o największej średniej względem dzielnicy o najniższej średniej. Wynik podaj z zaokrągleniem do drugiego miejsca po przecinku.
+
+```{r, echo = FALSE}
+load('mapa_wykres.rda')
+suppressMessages({library(ggplot2)})
+mapa_wykres
+```
 
 Beta i Bit szukają optymalnej ceny za pokój do wynajęcia w Warszawie dla ich przyjaciela poznanego w Paryżu, który ma zamiar odwiedzić ich w wakacje.
 
-```{r, echo = FALSE}
-library('shiny')
-includeHTML(path = 'mapa.html')
-```
-
-Dane pochodzą z serwisu [http://mi2.mini.pw.edu.pl:3838/CzasDojazdu/App/](http://mi2.mini.pw.edu.pl:3838/CzasDojazdu/App/) zaś mapy udostępnia serwis [http://www.openstreetmap.org](http://www.openstreetmap.org).
+Dane pochodzą z serwisu [http://mi2.mini.pw.edu.pl:3838/CzasDojazdu/App/](http://mi2.mini.pw.edu.pl:3838/CzasDojazdu/App/).
