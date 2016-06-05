@@ -45,7 +45,7 @@ caps$population2<- cut(caps$pop,
 #   ly_points(long, lat, data = caps, size = 5,
 #     hover = c(name, country.etc, population))
 
-      leaflet(width="100%", height="500px") %>%
+      leaflet(width="100%", height="300px") %>%
       addTiles() %>% 
         addMarkers(caps$long,
                    caps$lat,
