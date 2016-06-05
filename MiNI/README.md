@@ -6,6 +6,8 @@ Beta i Bit rozszyfrowali numery pokojów, przy których znajdują się te zagadk
 
 Jak szybko jesteś w stanie je odnaleźć i rozwiązać?
 
+# Seria MiNI PW
+
 ## Zadanie 1:
 
 Pracownicy wydziału MiNI zużywają sporo kredy. 
@@ -90,3 +92,13 @@ http://betabit.wiki/app/pl/locations/1/tasks/0998/
 ![](mini0998.png)
 
 
+## Zadanie 10:
+
+Pomóż B&B odczytać wykresy kołowy
+
+http://betabit.wiki/app/pl/locations/1/tasks/8888/
+
+![](mini8888.png)
+
+
+# Seria MIM UW
