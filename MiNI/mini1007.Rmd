@@ -8,7 +8,7 @@ opts_chunk$set(comment = NA, results = "asis", comment = NA,
 cat('<br>')
 ```
 
-**Zadanie:** Odpowiedz na następujące pytania dotyczące pogody w Tokyo. W jakim miesiącu stosunek stopni Celsjusza do opadów w mm był najmniejszy? Jaka jest wartość największego bezjednostkowego stosunku stopni Celsjusza do opadów w mm w zaprezentowanym wykresie? Jaki procent w ciągu przedstawionego półrocza stanowią godziny słoneczne? Odpowiedź podaj w formacie `miesiąc,wartość,procent`, gdzie wartość podaj w zaokrągleniu do 2 miejsca po przecinku a przy procentach podaj samą liczbę bez znaku `%`.
+**Zadanie:** Odpowiedz na następujące pytania dotyczące pogody w Tokyo. W jakim miesiącu stosunek stopni Celsjusza do opadów w mm był najmniejszy? Jaka jest wartość największego bezjednostkowego stosunku stopni Celsjusza do opadów w mm w zaprezentowanym wykresie? Jaki procent w ciągu przedstawionego półrocza stanowią godziny słoneczne? Odpowiedź podaj w formacie `miesiąc,wartość,procent`, gdzie `wartość` i `procent` podaj w zaokrągleniu do 2 miejsca po przecinku a przy procentach podaj samą liczbę bez znaku `%`.
 
 
 ```{r}
