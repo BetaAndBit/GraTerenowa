@@ -30,7 +30,7 @@ highchart(width="100%", height="320px") %>%
   hc_series(
     list(
       name = "Zaplanowany Budżet",
-      data = c(43000, 19000, 60000, 35000, 17000, 10000),
+      data = c(43000, 19000, 60000, 35000, 17000, 9000),
       pointPlacement = 'on'
     ),
     list(
