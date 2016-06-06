@@ -14,8 +14,8 @@ cat('<br>')
 
 ![](coffea_pin.jpg)
 
-Beta starała się zapamiętać składniki różnych rodzajów kaw, tak by móc pomagać mamie 
-parzyć ten napój w trakcie przyjęć rodzinnych. 
+Beta starała się zapamiętać składniki różnych rodzajów kaw, tak by pomagać rodzicom 
+parzyć ten napój podczas przyjęć rodzinnych. 
 
 Powyższy diagram to [Diagram Venna](https://pl.wikipedia.org/wiki/Diagram_Venna) i służy ilustrowaniu zależności między zbiorami.
 
