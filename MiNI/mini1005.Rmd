@@ -8,7 +8,7 @@ opts_chunk$set(comment = NA, results = "asis", comment = NA,
 cat('<br>')
 ```
 
-**Zadanie:** Z poniższej [mapy ciepła](https://en.wikipedia.org/wiki/Heat_map), w której kolory można porównywać w kolumnach, odczytaj który modelu samochodu jest najlżejszy, a który ma największą moc silnika. Wynik podaj w formacie `nazwa1,nazwa2`.
+**Zadanie:** Z poniższej [mapy ciepła](https://en.wikipedia.org/wiki/Heat_map), w której kolory można porównywać w kolumnach, odczytaj który modelu samochodu jest najlżejszy, a który ma największą pojemność silnika. Wynik podaj w formacie `nazwa1,nazwa2`.
 
 ```{r}
 # if (!require("devtools")) install.packages("devtools")
@@ -17,7 +17,7 @@ library(d3heatmap)
 names(mtcars) <- c("", "cylindry", "poj. silnika", "konie mech.",
 									 "", "waga [kg]", "", "", 
 									 "automat", "biegi", "gaźniki")
-mtcars[,6]<- round(mtcars[,6]*0.453,3)
+mtcars[,6]<- round(mtcars[,6]*0.453,3)*1000
 mtcars <- mtcars[, -c(1,5,7,8)]
 
 d3heatmap(mtcars, scale = "column", colors = "Spectral",Rowv = FALSE,Colv = FALSE,
