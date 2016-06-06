@@ -38,4 +38,4 @@ streamgraph(dat, "genre", "n", "year", interpolate="cardinal",
 
 Beta i Bit przeszukują serwisy internetowe w poszukiwaniu informacji o swoich ulubionych filmach i serialach. Czy [nie zawsze sensowny wykres strumieniowy](http://www.visualisingdata.com/2010/08/making-sense-of-streamgraphs/) pomoże odczytać potrzebne informacje?
 
-Dane pochodzą z serwisu [IMDB.com](http://imdb.com/) i przedstawiają filmy ocenione przez przynajmniej 1 użytkownika. Polityka pobierania udostępniania danych przez serwis zawarta jest [tutaj](http://www.imdb.com/help/show_leaf?infosource).
+Dane pochodzą z serwisu [IMDB.com](http://imdb.com/) i przedstawiają filmy ocenione przez przynajmniej 1 użytkownika. Polityka pobierania i udostępniania danych przez serwis zawarta jest [tutaj](http://www.imdb.com/help/show_leaf?infosource).
