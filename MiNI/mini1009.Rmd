@@ -10,7 +10,7 @@ cat('<br>')
 ```	
 
 
-**Zadanie:** Czy jesteś w stanie z poniższego diagramu wypisać w formacie `składnik1, składnik2, ...` kolejne składniki kawy **Latte** malejąco w zależności od stopnia zawartości? 
+**Zadanie:** Czy jesteś w stanie z poniższego diagramu wypisać w formacie `składnik1, składnik2, ...` składniki kawy **Latte**? 
 
 ![](coffea_pin.jpg)
 
