@@ -8,7 +8,7 @@ opts_chunk$set(comment = NA, results = "asis", comment = NA,
 cat('<br>')
 ```	
 
-**Zadanie:** Czy jesteś w stanie odczytać jaka jest suma populacji 2 najbardziej wysuniętych stolic na południe pomniejszona o populację najbardziej wysuniętej na północ europejskiej stolicy (stolicy Wysp Owczych)?
+**Zadanie:** Odczytaj z mapy jaka jest suma populacji 2 najbardziej wysuniętych na południe stolic europejskich pomniejszona o populację stolicy najbardziej wysuniętej na północ (stolicy Wysp Owczych)?
 
 ```{r, results='asis', echo = FALSE}
 #cat('<br>')	
@@ -61,5 +61,5 @@ caps$population2<- cut(caps$pop,
 cat('<br>')	
 ```
 
-Beta podczas szkolnej wycieczki do muzeum kupiła interaktywną mapę Europy, która przedstawia kontury państw wraz z ich stolicami i informacjami o liczności populacji w stolicy. Dane są aktualne dla początku 2006 roku a ich opis można znaleźć [tutaj](http://svitsrv25.epfl.ch/R-doc/library/maps/html/world.cities.html). Mapę stworzono w bibliotece [http://leafletjs.com/](http://leafletjs.com/).
+Beta podczas szkolnej wycieczki do muzeum kupiła interaktywną mapę Europy, która przedstawia kontury państw wraz z ich stolicami i informacjami o liczności populacji w tych miastach Dane pochodzą z początku 2006 roku a ich opis można znaleźć [tutaj](http://svitsrv25.epfl.ch/R-doc/library/maps/html/world.cities.html). Mapę stworzono w bibliotece [http://leafletjs.com/](http://leafletjs.com/).
 
