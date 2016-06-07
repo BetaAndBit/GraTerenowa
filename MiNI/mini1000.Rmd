@@ -22,4 +22,4 @@ auta2012[, c('Cena', 'Marka', 'Rok.produkcji')] %>%
 cat('<br>')	
 ```
 
-Bit trafił w internecie na kurs programowania o nazwie [Pogromcy Danych](http://pogromcydanych.icm.edu.pl/). To właśnie tam zetknął się z danymi dotyczącymi marek, cen i roku produkcji niektórych marek aut z 2012 roku, które pobrano z serwisu [otomoto.pl](otomoto.pl)
+Bit trafił w internecie na kurs programowania o nazwie [Pogromcy Danych](http://pogromcydanych.icm.edu.pl/). To właśnie tam zetknął się z danymi dotyczącymi marek, cen i roku produkcji niektórych aut z 2012 roku. Dane pobrano z serwisu [otomoto.pl](otomoto.pl)
