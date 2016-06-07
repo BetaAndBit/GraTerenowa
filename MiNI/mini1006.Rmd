@@ -8,7 +8,7 @@ opts_chunk$set(comment = NA, results = "asis", comment = NA,
 cat('<br>')
 ```
 
-**Zadanie:** Na wykresie [radarowym](https://en.wikipedia.org/wiki/Radar_chart) (pajęczynowym) wspólnik taty Bita i Bety umieścił informacje o zaplanowanych i faktycznych wydatkach na różne obszary w swojej firmie. Czy jesteś w stanie wskazać nazwy działów, w których rozbieżności były największe i najbliższe prawdzie? Wynik podaj w postaci `nazwa_działu_największe_rozbieżnosci` a po przecinku `nazwa_działu_najmniejsze_rozbieżności`.
+**Zadanie:** Na wykresie [radarowym](https://en.wikipedia.org/wiki/Radar_chart) (pajęczynowym) wspólnik taty Bita i Bety umieścił informacje o zaplanowanych i faktycznych wydatkach na różne obszary w swojej firmie. Wskaż nazwy działów, w których rozbieżności były najdalsze i najbliższe prawdzie? Najpierw wpisz nazwę działu o największych rozbieżnościach, a następnie po przecinku nazwę działu o najmniejszych rozbieżnościach.
 
 
 ```{r}
