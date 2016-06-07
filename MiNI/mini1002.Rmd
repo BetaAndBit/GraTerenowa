@@ -7,7 +7,7 @@ opts_chunk$set(comment = NA, results = "asis", comment = NA,
 ```{r}
 cat('<br>')
 ```	
-**Zadanie:** Odczytaj z mapy średnich cen za wynajem pokoju: jaki jest stosunek średniej ceny za wynajem pokoju w dzielnicy o największej średniej względem dzielnicy o najniższej średniej. Wynik podaj z zaokrągleniem do drugiego miejsca po przecinku.
+**Zadanie:** Odczytaj z mapy średnich cen za wynajem pokoju: jaki jest stosunek średniej ceny za wynajem pokoju w dzielnicy o największej średniej względem dzielnicy o najmniejszej średniej. Wynik podaj z zaokrągleniem do drugiego miejsca po przecinku.
 
 ```{r, echo = FALSE}
 load('mapa_wykres.rda')
