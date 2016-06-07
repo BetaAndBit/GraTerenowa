@@ -8,7 +8,7 @@ opts_chunk$set(comment = NA, results = "asis", comment = NA,
 cat('<br>')
 ```	
 
-**Zadanie:** Na poniższym wykresie strumieniowym (*ang. streamgraph*) odczytaj, których filmów przybywało najwięcej między rokiem 1980 a 2000?
+**Zadanie:** Z poniższego wykresu strumieniowego (*ang. streamgraph*) odczytaj, których filmów przybywało najwięcej między rokiem 1980 a 2000?
 
 ```{r}
 # devtools::install_github("hrbrmstr/streamgraph")
