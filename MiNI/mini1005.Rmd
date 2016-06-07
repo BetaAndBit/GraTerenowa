@@ -24,6 +24,8 @@ d3heatmap(mtcars, scale = "column", colors = "Spectral",Rowv = FALSE,Colv = FALS
 					width = "100%", height = "380px", xaxis_font_size = "10pt")
 ```
 
+**Wskazówka:** Przytrzymując palec na heatmapie, można wybrać obszar do powiększenia. Jednokrotnie dotykając mapy można odczytać wartości w komórkach.
+
 Sąsiad Bety i Bita jest kolekcjonerem starych aut. Zastanawia sie właśnie nad kupnem historycznego samochodu. Pomóż Becie i Bitowi, na bazie danych, doradzić, który samochód jest najlepszy.
 
 Dane pochodzą z magazynu [1974 Motor Trend US (opis danych)](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/mtcars.html) i porównują zużycie paliwa, wydajność oraz niektóre cechy 32 modeli samochodów.
